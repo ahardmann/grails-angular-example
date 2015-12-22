@@ -2,6 +2,7 @@ dataSource {
     pooled = true
     jmxExport = true
     driverClassName = "org.postgresql.Driver"
+	dialect = "org.hibernate.dialect.PostgreSQLDialect"
     username = "postgres"
     password = "123456"
 }
@@ -18,7 +19,7 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:postgresql://localhost:5432/todo_angular"
         }
     }
