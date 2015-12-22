@@ -16,7 +16,7 @@ class Tasks {
 		table 'TB_TASKS'
 		tasks column: 'TKS_id'
 		name column: 'TKS_name', sqlType: 'VARCHAR(50)'
-		description colmn: 'TKS_description'
+		description column: 'TKS_description'
 		date column: 'TKS_dt'
 	}
 }
