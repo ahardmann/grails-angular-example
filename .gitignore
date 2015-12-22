@@ -8,7 +8,7 @@
 # to generate your .gitignore file.
 
 # web application files
-/web-app/WEB-INF/classes
+/web-app/WEB-INF
 
 # default HSQL database files for production mode
 /prodDb.*
