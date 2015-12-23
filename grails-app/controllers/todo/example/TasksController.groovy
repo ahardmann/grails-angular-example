@@ -1,6 +1,25 @@
 package todo.example
 
-class TasksController {
+import java.util.List;
+import java.util.Map;
 
-    def index() { }
+import grails.rest.RestfulController;
+
+class TasksController extends RestfulController<Tasks>{
+	def tasksService
+	
+	TasksController (){
+		super(Tasks)
+	}
+	
+	@Override
+	protected List<Tasks> listAllResources(Map params) {
+		return tasksService.findAllByFilter(params)
+	}
+
+	@Override
+	protected Integer countResources() {
+		return tasksService.countByFilter(params)
+	}
+
 }
