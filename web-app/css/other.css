@@ -1,0 +1,17 @@
+.navbar-black{
+	background-color: #222;
+    padding: 10px 0;
+}
+
+.navbar-default .navbar-nav>.active>a,
+ .navbar-default .navbar-nav>.active>a:focus, 
+ .navbar-default .navbar-nav>.active>a:hover{
+	color: #fed136;
+    outline: 0;
+    background-color: #222;
+}
+
+.navbar-default .navbar-nav>.active>a{
+	color: #fff;
+	background-color: #222;	
+}
