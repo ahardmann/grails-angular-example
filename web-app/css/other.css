@@ -1,3 +1,20 @@
+section{
+	padding-bottom: 380px;
+}
+
+footer {
+	background-color: #222;
+    padding: 10px 0;
+    padding-bottom: 85px;
+}
+
+footer .copyright{
+	color: #fff;
+    line-height: 40px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+}
+
 .navbar-black{
 	background-color: #222;
     padding: 10px 0;
