@@ -5,17 +5,26 @@ html{
 header{
 	background-color: #222;
    	height:50px;
-    width:960px;
+    width:100%;
     margin:0px auto;
 }
 
-section{
-	padding-bottom: 352px;
+/*section{
+	height: 100%;
+	width: 100%;
+	padding-bottom: 330px;
+}*/
+
+.divContainer{
+	height: 485px;
+	width: 100%;
+	/*padding-bottom: 330px;*/
 }
 
 footer {
 	background-color: #222;
     width: 100%;
+	height: 111px;
 	bottom: 0;
 	position: absolute;
 }
@@ -36,6 +45,9 @@ a .btn, .btn-block, .btn-social-icon, .btn-lg, .btn-github{
 .navbar-black{
 	background-color: #222;
     padding: 10px 0;
+   	height:70px;
+    width:100%;
+	margin: auto;
 }
 
 .navbar-default .navbar-nav>.active>a,
