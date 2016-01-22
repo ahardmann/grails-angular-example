@@ -56,6 +56,12 @@ class TasksService {
 	
 	private mountFindFilter(params) {
 		return {
+//			if (params.wasRead != null) {
+//				eq('wasRead', params.wasRead)
+//			}
+			if (params.priority != null) {
+				eq('priority', params.priority)
+			}
 			 if (params.name) {
                 ilike('name', "%$params.name%")
             }
@@ -63,9 +69,23 @@ class TasksService {
 	}
 
 	private mountSearchFilter(params) {
+//		def wasRead = null
+		def priority = null
+		
+		try {
+//			wasRead = Boolean.valueOf(params.search)
+			priority = Boolean.valueOf(params.search)
+		} catch (e) {
+		}
 		return {
 			or {
-				 ilike('name', "%$params.search%")
+//				if (wasRead != null) {
+//					eq('wasRead', wasRead)
+//				}
+				if (priority != null) {
+					eq('priority', priority)
+				}
+				ilike('name', "%$params.search%")
 			}
 		}
 	}
