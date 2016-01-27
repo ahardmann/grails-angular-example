@@ -1,0 +1,32 @@
+<div>
+	<h1>Tarefas</h1>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Nome</th>
+					<th>Descrição</th>
+					<th>Data</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tasks in vm.taskList">
+					<td>{{tasks.id}}</td>
+					<td>{{tasks.name}}</td>
+					<td>{{tasks.description}}</td>
+					<td>{{tasks.dateCreated | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--<div class="col-md-3 col-sm-4 portifolio-item" style="padding-right: 15px; padding-left: 15px; margin-bottom: 30px;">-->
+			<!--<div style="border: 1px solid;">-->
+				<!--<div class="portfolio-hover">-->
+					<!--{{tasks.name}}-->
+					<!--{{tasks.description}}-->
+					<!--{{tasks.dateCreated | date: 'dd/MM/yyyy HH:mm:ss'}}-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+</div>
