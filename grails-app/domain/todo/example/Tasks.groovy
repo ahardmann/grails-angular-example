@@ -1,16 +1,22 @@
 package todo.example
 
+import groovy.transform.ToString
+import groovy.transform.EqualsAndHashCode
+import grails.rest.*
+
+@Resource(uri='/tasks', formats=['json', 'xml'])
+@EqualsAndHashCode
 class Tasks {
-	static belongsTo = [tasks: Tasks]
+	Long    id
+	Date    dateCreated
 	
 	String name
 	String description
 	Boolean priority = false
 //	Boolean wasRead = false
-	Date date
+//	Date date
 	
     static constraints = {
-		tasks(nullable: false)
 		name(nullable: false, maxSize: 50)
 		priority(nullable: false)
 //		wasRead(nullable: false)
@@ -18,11 +24,11 @@ class Tasks {
 	
 	static mapping = {
 		table 'TB_TASKS'
-		tasks column: 'TKS_id'
-		name column: 'TKS_name', sqlType: 'VARCHAR(50)'
+		name column: 'TKS_name', sqlType: 'VARCHAR(100)'
 		description column: 'TKS_description'
 		priority column: 'TKS_priority'
 //		wasRead column: 'TKS_wasRead'
-		date column: 'TKS_dt'
+		dateCreated column: 'TKS_dt_created'
+//		date column: 'TKS_dt'
 	}
 }
