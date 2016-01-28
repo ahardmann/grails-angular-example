@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	var TaskApp = angular.module('TaskApp', ['ui.router', 'ngResource', 'oc.lazyLoad']);
+	var TaskApp = angular.module('TaskApp', ['ui.router', 'ngResource']);
 
 	angular.module('TaskApp').factory('settings', ['$rootScope', function ($rootScope) {
 		var settingsDev = {
@@ -79,23 +79,24 @@
                 	taskService.save(params, vm.tasks).$promise.then(
                 			function success(value, responseHeaders){
                 				$state.go('tasks.list');
-                	})
+                	});
+                }else if(method == 'update'){
+                	var paramsUpdate = {controller: 'tasks', id: vm.tasks.id}
+                	taskService.update(params, vm.tasks).$promise.then(
+                			function success(value, responseHeaders){
+                            	$state.go('tasks.list');
+                			}
+                	);
                 }
             }
         }
         
         function loadTask() {
-        	console.log("teste 3");
-        	 taskService.show({controller:'tasks', nId: $stateParams.id}).$promise.then(
+        	 taskService.show({controller:'tasks', id: $stateParams.id}).$promise.then(
                 function (tasks) {
                     bindTask(tasks);
-                }
-            ).finally(
-                function () {
-                }
-            );
+                });
         }
-
 
         function cleanTask() {
             vm.tasks = {id: null}
@@ -106,9 +107,7 @@
                 id: tasks.id,
                 name: tasks.name,
                 description: tasks.description,
-                priority: tasks.priority,
-                dateCreated: tasks.dateCreated
-//                date: tasks.date
+                priority: tasks.priority
             };
         }
 
@@ -118,10 +117,6 @@
         	}else{
             	cleanTask();
         	}
-        	
-            if ($stateParams.id != undefined && $stateParams.id != "") {
-            	loadTask();
-            }
         }
 		
 	}]);
@@ -130,7 +125,7 @@
 		var vm = this;
 		vm.listTask = listTask;
 		vm.updateTaskList = updateTaskList;
-		vm.deleteTask = deleteTask 
+		vm.deleteTask = deleteTask;
 		
 		init();
 
@@ -147,7 +142,7 @@
 			 taskService.remove({controller: 'tasks', id: taskId.id});
 			 vm.listTask({controller: 'tasks'}, vm.updateTaskList);
 		 }
-
+		 
 		 function init() {
 			 vm.listTask({controller: 'tasks'}, vm.updateTaskList);
 		 }
