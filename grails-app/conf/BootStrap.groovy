@@ -52,7 +52,6 @@ class BootStrap {
 			returnMap.description = it.description
 			returnMap.priority = it.priority
 			returnMap.dateCreated =  it.dateCreated
-//			returnMap.date =  it.date
 			
 			return returnMap
 		}
