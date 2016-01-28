@@ -20,18 +20,12 @@
 					<td><a class="btn" ng-click="vm.deleteTask($index)">
 							<i class="fa fa-trash-o"></i>
 						</a>
+						<a class="btn" ui-sref="tasks.create({id: tasks.id})" >
+							<i class="fa fa-edit"></i>
+						</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<!--<div class="col-md-3 col-sm-4 portifolio-item" style="padding-right: 15px; padding-left: 15px; margin-bottom: 30px;">-->
-			<!--<div style="border: 1px solid;">-->
-				<!--<div class="portfolio-hover">-->
-					<!--{{tasks.name}}-->
-					<!--{{tasks.description}}-->
-					<!--{{tasks.dateCreated | date: 'dd/MM/yyyy HH:mm:ss'}}-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
 	</div>
 </div>

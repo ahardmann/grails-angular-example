@@ -1,5 +1,5 @@
 <div>
-	<h2 style="color: #fff;">Nova</h2>
+	<h2>Nova</h2>
 	<div>
 		<form class="form-horizontal" name="formTask" ng-submit="vm.tasks.id ? vm.update(formTask) : vm.save(formTask)" novalidate>
 			<div class="form-group">
@@ -9,7 +9,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<!-- <label for="taskDescription" class="col-sm-2 control-label" style="color: #fff;">Descrição: </label> -->
 				<div class="col-sm-offset-2 col-sm-4">
 					<input class="form-control" id="taskDescription" ng-model="vm.tasks.description" placeholder="Descrição">
 				</div>
