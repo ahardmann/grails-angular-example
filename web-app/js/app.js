@@ -60,12 +60,10 @@
         init();
 
         function save(form) {
-        	console.log("aqui save ", form);
             createOrUpdate(form, 'save');
         }
 
         function update(form) {
-        	console.log("aqui up ", form);
             createOrUpdate(form, 'update');
         }
 
@@ -82,7 +80,7 @@
                 	});
                 }else if(method == 'update'){
                 	var paramsUpdate = {controller: 'tasks', id: vm.tasks.id}
-                	taskService.update(params, vm.tasks).$promise.then(
+                	taskService.update(paramsUpdate, vm.tasks).$promise.then(
                 			function success(value, responseHeaders){
                             	$state.go('tasks.list');
                 			}
@@ -92,7 +90,8 @@
         }
         
         function loadTask() {
-        	 taskService.show({controller:'tasks', id: $stateParams.id}).$promise.then(
+        	var params = {controller:'tasks', id: $stateParams.id};
+        	 taskService.show(params).$promise.then(
                 function (tasks) {
                     bindTask(tasks);
                 });
@@ -126,11 +125,12 @@
 		vm.listTask = listTask;
 		vm.updateTaskList = updateTaskList;
 		vm.deleteTask = deleteTask;
+		var params = {controller: 'tasks'};
 		
 		init();
 
-		 function listTask(controller ,callback) {
-	         taskService.list({controller: 'tasks'}, callback);
+		 function listTask(params ,callback) {
+	         taskService.list(params, callback);
 		 }
 
 		 function updateTaskList(taskListResult) {
@@ -139,12 +139,16 @@
 		 
 		 function deleteTask(index){
 			 var taskId = vm.taskList[index];
-			 taskService.remove({controller: 'tasks', id: taskId.id});
-			 vm.listTask({controller: 'tasks'}, vm.updateTaskList);
+			 var paramsDelete = {controller: 'tasks', id: taskId.id}
+			 taskService.remove(paramsDelete).$promise.then(
+					 function success(value, responseHeaders){
+						 vm.listTask(params, vm.updateTaskList);
+					 }
+			 );
 		 }
 		 
 		 function init() {
-			 vm.listTask({controller: 'tasks'}, vm.updateTaskList);
+			 vm.listTask(params, vm.updateTaskList);
 		 }
 	}]);
 	
