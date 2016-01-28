@@ -3,8 +3,8 @@ dataSource {
     jmxExport = true
     driverClassName = "org.postgresql.Driver"
 	dialect = "org.hibernate.dialect.PostgreSQLDialect"
-    username = "postgres"
-    password = "123456"
+    username = ""
+    password = ""
 }
 hibernate {
     cache.use_second_level_cache = true
