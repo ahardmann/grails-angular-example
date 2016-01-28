@@ -1,0 +1,76 @@
+html{
+	height: 100%;
+}
+
+header{
+	background-color: #222;
+   	height:50px;
+    width:100%;
+    margin:0px auto;
+}
+
+.divContainer{
+	height: 485px;
+	width: 100%;
+}
+
+footer {
+	background-color: #222;
+    width: 100%;
+	height: 111px;
+	bottom: 0;
+	position: absolute;
+}
+
+footer .copyright{
+	color: #fff;
+    line-height: 40px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    align: center;
+}
+
+a .btn, .btn-block, .btn-social-icon, .btn-lg, .btn-github{
+	width: 24px;
+	margin: auto;
+    padding: 10px;
+}
+
+.navbar-default {
+    background-color: #222;
+    border-color: transparent;
+}
+
+.navbar-black{
+	background-color: #222;
+    padding: 10px 0;
+   	height:70px;
+    width:100%;
+	margin: auto;
+}
+
+.navbar-collapse:before{
+    display: table;
+    content: " ";
+ }
+ .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after{
+  	clear: both;
+  }
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
+    background-color: #222;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-nav>.active>a,
+ .navbar-default .navbar-nav>.active>a:focus, 
+ .navbar-default .navbar-nav>.active>a:hover{
+	color: #fed136;
+    outline: 0;
+    background-color: #222;
+}
+
+.navbar-default .navbar-nav>.active>a{
+	color: #fff;
+	background-color: #222;	
+}

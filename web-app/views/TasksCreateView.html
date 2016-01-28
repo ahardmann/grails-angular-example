@@ -1,0 +1,34 @@
+<div>
+	<h2>Nova</h2>
+	<div>
+		<form class="form-horizontal" name="formTask" ng-submit="vm.tasks.id ? vm.update(formTask) : vm.save(formTask)" novalidate>
+			<div class="form-group">
+				<!-- <label for="taskName" class="col-sm-2 control-label" style="color: #fff;">Nome: </label> -->
+				<div class="col-sm-offset-2 col-sm-4">
+					<input class="form-control" id="taskName"  ng-model="vm.tasks.name" placeholder="Atividade">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-4">
+					<input class="form-control" id="taskDescription" ng-model="vm.tasks.description" placeholder="Descrição">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" ng-model="vm.tasks.priority"> Prioridade
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
