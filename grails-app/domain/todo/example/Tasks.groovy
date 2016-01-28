@@ -13,13 +13,10 @@ class Tasks {
 	String name
 	String description
 	Boolean priority = false
-//	Boolean wasRead = false
-//	Date date
 	
     static constraints = {
 		name(nullable: false, maxSize: 50)
 		priority(nullable: false)
-//		wasRead(nullable: false)
     }
 	
 	static mapping = {
@@ -27,8 +24,6 @@ class Tasks {
 		name column: 'TKS_name', sqlType: 'VARCHAR(100)'
 		description column: 'TKS_description'
 		priority column: 'TKS_priority'
-//		wasRead column: 'TKS_wasRead'
 		dateCreated column: 'TKS_dt_created'
-//		date column: 'TKS_dt'
 	}
 }
