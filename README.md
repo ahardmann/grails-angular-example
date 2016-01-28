@@ -1,4 +1,4 @@
-# grails-angular-example is a simple rest crud with grails, angularJs, html5 and postgresql.
+# grails-angular-example is a simple rest crud with grails 2.5.0, angularJs, html5 and postgresql.
 
 <html>
   <h4>
