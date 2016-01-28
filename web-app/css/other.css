@@ -48,11 +48,11 @@ a .btn, .btn-block, .btn-social-icon, .btn-lg, .btn-github{
 	margin: auto;
 }
 
- .navbar-collapse:before{
+.navbar-collapse:before{
     display: table;
     content: " ";
  }
-  .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after{
+ .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after{
   	clear: both;
   }
 

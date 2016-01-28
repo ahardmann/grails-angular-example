@@ -130,7 +130,8 @@
 		var vm = this;
 		vm.listTask = listTask;
 		vm.updateTaskList = updateTaskList;
-
+		vm.deleteTask = deleteTask 
+		
 		init();
 
 		 function listTask(controller ,callback) {
@@ -139,6 +140,12 @@
 
 		 function updateTaskList(taskListResult) {
 			 vm.taskList = taskListResult;
+		 }
+		 
+		 function deleteTask(index){
+			 var taskId = vm.taskList[index];
+			 taskService.remove({controller: 'tasks', id: taskId.id});
+			 vm.listTask({controller: 'tasks'}, vm.updateTaskList);
 		 }
 
 		 function init() {

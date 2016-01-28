@@ -6,8 +6,9 @@
 				<tr>
 					<th></th>
 					<th>Nome</th>
-					<th>Descrição</th>
+					<th>DescriÃ§Ã£o</th>
 					<th>Data</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -16,6 +17,10 @@
 					<td>{{tasks.name}}</td>
 					<td>{{tasks.description}}</td>
 					<td>{{tasks.dateCreated | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+					<td><a class="btn" ng-click="vm.deleteTask($index)">
+							<i class="fa fa-trash-o"></i>
+						</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
